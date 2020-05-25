@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css') 
+    meta(name="viewport" content="width= device-width, initial-scale=1")
+  body(id="contact")
+    block content
+      div(id="mainContainerContact" class="mainContainer")
+        div(class="section" id="contactInfo")
+          form(method='POST' action='contact')
+            h3 Contact Me
+            textarea(name="message" cols="50" rows="5" placeholder="How can I Help you and your bussiness today?")
+            br
+            input(type="text" name="name" placeholder="Enter your name" id="name") 
+            br
+            input(type="email" name="email" placeholder="Enter your email" id="email")
+            br
+            button.btn.btn-primary(type='submit' id="submit" onclick="recieved()") Send
+          script(type='text/javascript' src='/javascripts/next.js')
+    script(type='text/javascript' src='/javascripts/next.js')
+      
+
+  
+
+
+
+  

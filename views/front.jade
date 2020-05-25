@@ -1,0 +1,22 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css') 
+    meta(name="viewport" content="width= device-width, initial-scale=1")
+  body(id="frontPage")
+    block content
+      div(class="mainContainer" id="mainContainer" class="front")
+        div(id="banner" class="section")
+          h2 Zakariye Yusuf
+          img(src="/images/banner.webp")
+          p 
+        div(id="summary" class="section")
+            div(id="summaryBody")
+                p(id="hello") Hello, 
+                p Your bussiness needs to come online with a new modren website and you need a modren javaScript web developer with a ample knowledge and experties for that. 
+                p That is where I come in. Get in touch below, and let's have a cup of coffee.
+    script(type='text/javascript' src='/javascripts/next.js')
+      div(id="length" class="inisible") !{length}
+
+  
