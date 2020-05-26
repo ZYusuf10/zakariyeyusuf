@@ -838,9 +838,15 @@ html, body {
   .skillSection{
     width: 90%;
   }
+  .skillSection > h2, p, div{
+    margin: 5px;
+  }
   .skillSection > p{
     float: left;
-    padding: 2%;
+    padding: 0px;
+  }
+  .section > p{
+    font-weight: lighter;
   }
   .education{
     color: #333D51;

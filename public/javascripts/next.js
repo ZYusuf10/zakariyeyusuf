@@ -36,7 +36,7 @@ window.onload = () => {
     let bio = document.createElement('p');
     bio.innerHTML = 'I started developing websites in 2016 with techCorps as a student employee, where I lead a team of 4 people to developing websites for local bussiness and organizations based in Ohio.'
     let bio2 = document.createElement('p');
-    bio2.innerHTML =  'Since, then, I have been freelancing web developer, primarily with javascript, and, I have gotten experience to other paradigms of computing through my study of Computer Science and Engineering at the Ohio State University.';
+    bio2.innerHTML =  'Since then, I have been freelancing web developer, primarily with javascript, and, I have gotten experience to other paradigms of computing through my study of Computer Science and Engineering at the Ohio State University.';
     section.appendChild(bio);
     section.appendChild(bio2);
 
@@ -231,6 +231,10 @@ function change(){
         java.textContent = 'Java';
         otherSkills.appendChild(java);
 
+        let python = document.createElement('p');
+        python.textContent = 'python';
+        otherSkills.appendChild(python);
+
         let cssHtml = document.createElement('p');
         cssHtml.textContent = 'CSS3/HTML5';
         otherSkills.appendChild(cssHtml);
@@ -294,7 +298,7 @@ function topp(){
         let bio = document.createElement('p');
         bio.innerHTML = 'I started developing websites in 2016 with techCorps as a student employee, where I lead a team of 4 people to developing websites for local bussiness and organizations based in Ohio.'
         let bio2 = document.createElement('p');
-        bio2.innerHTML =  'Since, then, I have been freelancing web developer, primarily with javascript, and, I have gotten experience to other paradigms of computing through my study of Computer Science and Engineering at the Ohio State University.';
+        bio2.innerHTML =  'Since then, I have been freelancing web developer, primarily with javascript, and, I have gotten experience to other paradigms of computing through my study of Computer Science and Engineering at the Ohio State University.';
         section.appendChild(bio);
         section.appendChild(bio2);
 
@@ -505,12 +509,6 @@ function down(){
     moreH2.textContent = 'More About Me';
     moreAboutMe.appendChild(moreH2);
 
-    let about = document.createElement('a');
-    about.setAttribute('href', 'about');
-    about.setAttribute('id', 'about');
-    about.textContent = 'summary'
-    moreAboutMe.appendChild(about);
-
     let resume = document.createElement('a');
     resume.setAttribute('href', 'resume');
     resume.setAttribute('id', 'resume');
@@ -534,6 +532,12 @@ function down(){
     journal.setAttribute('id', 'journal');
     journal.textContent = 'journal';
     moreAboutMe.appendChild(journal);
+
+    let about = document.createElement('a');
+    about.setAttribute('href', 'about');
+    about.setAttribute('id', 'about');
+    about.textContent = 'more'
+    moreAboutMe.appendChild(about);
 
     /*div(id="media" class="section")
             h2 Say Hi
@@ -603,7 +607,7 @@ function up(){
     banner.appendChild(nameH);
 
     let bannerImg = document.createElement('img');
-    bannerImg.setAttribute('src', '/images/banner.webp');
+    bannerImg.setAttribute('src', '/images/sahara.jpg');
     banner.appendChild(bannerImg);
 
     let info = document.createElement('p');
