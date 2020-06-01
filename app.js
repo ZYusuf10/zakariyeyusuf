@@ -49,7 +49,7 @@ app.use(function(err, req, res, next) {
 app.use(express.static('public'));
 
 app.listen(8080, function () {
-  console.log('zakariyeyusuf listening on port 80.')
+  console.log('zakariyeyusuf listening on port 8080.')
 })
 
 
