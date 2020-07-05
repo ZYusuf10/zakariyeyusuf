@@ -48,8 +48,8 @@ app.use(function(err, req, res, next) {
 //serve static data
 app.use(express.static('public'));
 
-app.listen(8080, function () {
-  console.log('zakariyeyusuf listening on port 8080.')
+app.listen(80, function () {
+  console.log('zakariyeyusuf listening on port 80.')
 })
 
 
