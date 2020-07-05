@@ -48,7 +48,7 @@ app.use(function(err, req, res, next) {
 //serve static data
 app.use(express.static('public'));
 
-app.listen(3000, function () {
+app.listen(8080, function () {
   console.log('zakariyeyusuf listening on port 3000.')
 })
 
