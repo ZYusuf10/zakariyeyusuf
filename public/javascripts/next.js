@@ -531,6 +531,7 @@ function down(){
     journal.setAttribute('href', 'journal');
     journal.setAttribute('id', 'journal');
     journal.textContent = 'journal';
+    journal.href = "/journal"
     moreAboutMe.appendChild(journal);
 
     let about = document.createElement('a');
