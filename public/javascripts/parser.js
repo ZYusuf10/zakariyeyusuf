@@ -1,5 +1,4 @@
 function parseAndDisplay(Data){
-    alert(Data)
     let container = document.querySelector('#techDetContainer');
     var text = document.createElement('div');
     var xmp = document.createElement('xmp');
