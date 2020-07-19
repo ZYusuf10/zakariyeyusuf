@@ -3,10 +3,7 @@ var Schema = mongoose.Schema;
 
 var TechnicalPostSchema = new Schema(
   {
-    Title: {type: String, required: true, max: 200},
-    ImageName: {type: String, required: true, max: 100},
-    Caption: {type: String, required: true, max: 100},
-    Body: {type: String, required: true, max: 3000}
+    Record: {type: Object, blackbox: true }
   }
 );
 

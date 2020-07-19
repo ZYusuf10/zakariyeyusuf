@@ -14,8 +14,8 @@ block content
     div(id="jArticlesContainer")
         each val in aList
             div(class="jArticle")
-                div= val.Title
-                img(src='/images/'+val.ImageName)
+                div= val.Record.blocks[0].data.text
+                img(src='/images/'+val.Record.blocks[1].imageName)
                 a(href=val.url) read more
   else
     p you searched for  #{searchSubject}

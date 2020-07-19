@@ -26,6 +26,7 @@ var editor = new EditorJS({
   }, 
 });
 
+/* save book reflection */
 function save(){
   editor.save().then((outputData) => {
     console.log('Article data: ', outputData)
@@ -46,6 +47,27 @@ function save(){
   }).catch((error) => {
     console.log('Saving failed: ', error)
   });
+}
 
-  
+/* save technical record JS */
+function saveJS(){
+  editor.save().then((outputData) => {
+    console.log('Article data: ', outputData)
+    //send editor data 
+    // Creating a XHR object 
+    let xhr = new XMLHttpRequest(); 
+    let url = 'http://localhost:3000/editorDataJS'; 
+    // open a connection 
+    xhr.open("POST", url, true); 
+    // Set the request header i.e. which type of content you are sending 
+    xhr.setRequestHeader("Content-Type", "application/json"); 
+    // Create a state change callback 
+    
+    // Converting JSON data to string 
+    var data = JSON.stringify(outputData); 
+    // Sending data with the request 
+    xhr.send(data); 
+  }).catch((error) => {
+    console.log('Saving failed: ', error)
+  });
 }

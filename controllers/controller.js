@@ -40,7 +40,7 @@ exports.newBookReflection = function(req, res){
     res.render('newBookReflection', {title: ''});
 }
 
-/* save new technical record */
+/* save new technical record 
 exports.newTechnicalRecord = function(req, res, next){
     let TRecordCopy = new TechRecord({
         Title: req.body.Title,
@@ -97,13 +97,15 @@ exports.newTechnicalRecord = function(req, res, next){
 
     
 };
+*/
 
 /* article index pages, read more*/
 exports.javaScript = function(req, res){
-    TechRecord.find({}, 'Title ImageName Body')
+    TechRecord.find({})
     .exec(
         function(err, aList){
             if(err) {return next(err);}
+            //strip the header image and ur
             res.render('javaScript', {title: 'javaScript Records', aList:aList, searched:false});
         }
     );
@@ -132,15 +134,8 @@ exports.technicalDetail = function(req, res, next){
                 return next(err);
 
             }
-            //parse record md
-            let parsedRecord = {
-                Title : results.record.Title,
-                Caption : results.record.Caption,
-                ImageName : results.record.ImageName,
-            }
-            
            
-            res.render('technicalDetail', {title: 'Title Caption Body ImageName', record: results.record});
+            res.render('technicalDetail', {title: 'details', record: results.record});
         
     });
 }
@@ -182,9 +177,53 @@ exports.saveBookRef = function(req, res, next){
         if(err){
             return next(err);
         }
-        res.send('goog');
+        res.send('good');
 
     });  
+}
+exports.saveJSRecord = function(req, res, next){
+    var record = req.body;
+    for(let i = 0; i < record.blocks.length; i++){
+        if(record.blocks[i].type =='image'){
+            record.blocks[i].imageName = imageName;
+            console.log(record.blocks[i]);
+        }
+    }
+
+    let ref = new TechRecord({
+        Record: record
+    }).save(err => {
+        if(err){
+            return next(err);
+        }
+    });  
+    //initiate transport andget a list of emails
+    var transporter = nodemailer.createTransport({
+        service: 'Gmail',
+        auth: {
+            user: 'zakarjama@gmail.com',
+            pass: 'Honesty2020!'
+        }
+    })
+   
+    Email.find({}, 'Email')
+    .exec(
+        function(err, aList){
+
+            for(var i = 0; i < aList.length; i++){
+                console.log('created');
+                transporter.sendMail({
+                from: 'zakarjama@gmail.com',
+                to: aList[i].Email,
+                subject: 'New Record from Javascript Journal',
+                text: 'There is a new article in Javascript Records. Read in here: http://www.zakariyeyusuf.com/javascript',
+                });
+            }
+        }
+    );
+    res.send('good');
+    
+    
 }
 
 /* Reflections index page */

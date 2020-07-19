@@ -1,11 +1,22 @@
 extends layout
 
 block content
- script(type='text/javascript' src='/javascripts/parser.js')
- h2= record.Title
- img(src='/images/'+record.ImageName onload='parseAndDisplay('+JSON.stringify(record.Body)+');')
- p= record.Caption
- div(id='techDetContainer')
+  each ref in record.Record.blocks
+    if ref.type == 'image'
+        img(src='/images/'+ref.imageName class="articalImg")
+    else if ref.type == 'header'
+        h2= ref.data.text
+    else if ref.type == 'paragraph'
+        p= ref.data.text
+    else if ref.type == 'list' && ref.data.style == "ordered"
+      ul
+        each elem in ref.data.items
+         li= elem
+    else if ref.type == 'list' && ref.data.style == "unordered"
+      ol
+        each elem in ref.data.items
+         li= elem
+
 
 
  

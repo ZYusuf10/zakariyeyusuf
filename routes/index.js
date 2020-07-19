@@ -37,7 +37,7 @@ router.post('/newBit', controller.newBitPost);
 router.get('/newTecknical', controller.newTecknical);
 router.get('/newBookReflection', controller.newBookReflection);
 
-router.post('/newTechnicalRecord',upload.single('image'), controller.newTechnicalRecord);
+
 router.get('/Technical/:id', controller.technicalDetail);
 router.post('/searchTechnical', controller.searchTechnical);
 
@@ -50,10 +50,11 @@ router.post('/saveBookRef', controller.saveBookRef);
 router.post('/uploadFile', upload.single('image'), controller.uploadFile);
 router.post('/editorData', controller.saveBookRef);
 
+
 /*bookreflections index page and details */
 router.get('/bookreflections', controller.bookreflections);
 router.get('/Reflection/:id', controller.reflectionDetail);
-
+router.post('/editorDataJS', controller.saveJSRecord);
 
 
 
