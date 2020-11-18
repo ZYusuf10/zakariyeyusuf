@@ -12,7 +12,11 @@ var editor = new EditorJS({
    */ 
   tools: { 
     header: Header, 
+    code: CodeTool,
     list: List,
+    table: {
+      class: Table,
+    },
     image: {
       class: ImageTool,
       config: {

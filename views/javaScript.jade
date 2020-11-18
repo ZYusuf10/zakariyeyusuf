@@ -14,18 +14,30 @@ block content
     div(id="jArticlesContainer")
         each val in aList
             div(class="jArticle")
-                div= val.Record.blocks[0].data.text
-                img(src='/images/'+val.Record.blocks[1].imageName)
+                if val.Record.blocks[0].type == 'header'
+                   div= val.Record.blocks[0].data.text
+                else if val.Record.blocks[1].type == 'header'
+                  div= val.Record.blocks[1].data.text
+                else
+                   div= val.Record.blocks[0].data.text
+                if val.Record.blocks[1].type == 'image'
+                   img(src='/images/'+val.Record.blocks[1].imageName)
                 a(href=val.url) read more
   else
     p you searched for  #{searchSubject}
     div(id="jArticlesContainer")
         each val in aList
-            if val.Title.includes(searchSubject) || val.Body.includes(searchSubject)
+            if JSON.stringify(val).includes(searchSubject)
                 div(class="jArticle")
-                div= val.Title
-                img(src='/images/'+val.ImageName)
-                a(href=val.url) read more
+                  if val.Record.blocks[0].type == 'header'
+                    div= val.Record.blocks[0].data.text
+                  else if val.Record.blocks[1].type == 'header'
+                    div= val.Record.blocks[1].data.text
+                  else
+                    div= val.Record.blocks[0].data.text
+                  if val.Record.blocks[1].type == 'image'
+                    img(src='/images/'+val.Record.blocks[1].imageName)
+                  a(href=val.url) read more
 
 
 

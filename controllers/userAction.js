@@ -31,6 +31,11 @@ exports.contactPost = function(req, res, next){
         res.render('contact', {title: ''});
     });
 };
+exports.payMe= function(req, res){
+    res.render('payMe', {title: 'payMe'});
+}
+
 exports.pageNotFound = function(req, res){
     res.render('pageNotFound', {title: ''})
 }
+

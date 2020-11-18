@@ -3,14 +3,16 @@ html
   head
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@2.5.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/raw"></script>
     <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
     <link rel='stylesheet' href='/stylesheets/styleJ.css'>
   body(id="newBitGet")
     block content
+      p code blocks are just a text, but code locks start with -. If an article gets two large, it's best to devide it to multiple articles.
       div(id="editorjs" style="border-style: solid;")
       button(onclick="saveJS();") save Js Record.
-      <p>Node you could encapsulate code for the editor by enclosing it's block in #.</p>
       script(src="/javascripts/editor.js")

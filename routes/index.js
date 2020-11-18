@@ -11,7 +11,8 @@ router.get('/front', userAction.front);
 router.get('/projects', userAction.projects);
 router.get('/contact', userAction.contact);
 router.post('/contact', userAction.contactPost);
-router.get('/about', userAction.about)
+router.get('/about', userAction.about);
+router.get('/payMe', userAction.payMe);
 
 
 
@@ -48,7 +49,8 @@ router.post('/saveBookRef', controller.saveBookRef);
 /*journal books*/
 
 router.post('/uploadFile', upload.single('image'), controller.uploadFile);
-router.post('/editorData', controller.saveBookRef);
+router.post('/editorData', controller.saveJSRecord);
+
 
 
 /*bookreflections index page and details */
@@ -56,7 +58,7 @@ router.get('/bookreflections', controller.bookreflections);
 router.get('/Reflection/:id', controller.reflectionDetail);
 router.post('/editorDataJS', controller.saveJSRecord);
 
-
+//paypal
 
 
 

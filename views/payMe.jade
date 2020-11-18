@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  h1 Pasying: what you're paying
+  h1 cost: 25$
+  form(method='POST' action='payMe')
+    button.btn.btn-primary(type='submit' id="submit" onclick="recieved()") pay

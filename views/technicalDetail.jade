@@ -8,18 +8,20 @@ block content
         h2= ref.data.text
     else if ref.type == 'paragraph'
         p= ref.data.text
-    else if ref.type == 'list' && ref.data.style == "ordered"
+    else if ref.type == 'table'
+        table(style='width:100%', border='1')
+          each row in ref.data.content
+            tr
+              td= row[0]
+              td= row[1]
+    else if ref.type == 'code'
+        pre
+          code=ref.data.code 
+    else if ref.type == 'list' && ref.data.style == "unordered"
       ul
         each elem in ref.data.items
          li= elem
-    else if ref.type == 'list' && ref.data.style == "unordered"
+    else if ref.type == 'list' && ref.data.style == "ordered"
       ol
         each elem in ref.data.items
-         li= elem
-
-
-
- 
-    
-
- 
+          li= elem

@@ -111,8 +111,8 @@ exports.javaScript = function(req, res){
     );
   
 }
-exports.searchTechnical = function(req, res){
-    TechRecord.find({}, 'Title ImageName Body')
+exports.searchTechnical = function(req, res) {
+    TechRecord.find({}, '')
     .exec(
         function(err, aList){
             if(err) {return next(err);}
@@ -255,4 +255,6 @@ exports.reflectionDetail = function(req, res, next){
         
     });
 }
+
+
 
