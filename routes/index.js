@@ -57,6 +57,8 @@ router.post('/editorData', controller.saveJSRecord);
 router.get('/bookreflections', controller.bookreflections);
 router.get('/Reflection/:id', controller.reflectionDetail);
 router.post('/editorDataJS', controller.saveJSRecord);
+router.post('/editorDataUpdateJS/:id', controller.updateJSRecord);
+
 
 //paypal
 

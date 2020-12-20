@@ -1,0 +1,20 @@
+doctype html
+html
+  head
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/header@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/table@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/list@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/image@2.3.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/code@2.5.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/raw"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/quote@latest"></script>
+    <link rel='stylesheet' href='/stylesheets/styleJ.css'>
+  body(id="newBitGet")
+    block content
+      p(id="record" style="font-size: 0px;")=JSON.stringify(record.Record)
+      p(id="id" style="font-size: 10px;")=JSON.stringify(record._id)
+      div(id="editorjs" style="border-style: solid;")
+      script(src="/javascripts/editorUpdate.js")
+      button(onclick="updateJS()") update Js Record.
+      

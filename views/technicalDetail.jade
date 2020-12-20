@@ -1,4 +1,4 @@
-extends layout
+extends layoutForDet
 
 block content
   each ref in record.Record.blocks
@@ -25,3 +25,7 @@ block content
       ol
         each elem in ref.data.items
           li= elem
+  input(type="text" id="updateText") 
+  input(type="button" value="update" id="updateButton")
+  script(type='text/javascript' src="/javascripts/update.js") 
+  

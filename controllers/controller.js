@@ -13,7 +13,7 @@ var storage = multer.diskStorage({
   destination: './public/images/',
   filename: function (req, file, cb) {
     crypto.pseudoRandomBytes(16, function (err, raw) {
-      if (err) return cb(err)
+      if (err) return cb(err);
 
       cb(null, raw.toString('hex') + path.extname(file.originalname))
     })
@@ -123,22 +123,76 @@ exports.searchTechnical = function(req, res) {
 }
 
 exports.technicalDetail = function(req, res, next){
-    async.parallel({
-        record: function(callback){
-            TechRecord.findById(req.params.id).exec(callback)
-        },},function(err, results){
-            if(err){return next(err);}
-            if(results.record == null){
-                var err = new Error('Record Not Found');
-                err.status = 404;
-                return next(err);
-
-            }
-           
-            res.render('technicalDetail', {title: 'details', record: results.record});
+    //if we don't want to update by intering article id and clicking update, just serve the artice
+    if(req.query.update == undefined){
+        async.parallel({
+            record: function(callback){
+                TechRecord.findById(req.params.id).exec(callback)
+            },},function(err, results){
+                if(err){return next(err);}
+                if(results.record == null){
+                    var err = new Error('Record Not Found');
+                    err.status = 404;
+                    return next(err);
+    
+                }  
+                res.render('technicalDetail', {title: 'details', record: results.record});
+            
+        });
+    }else{
+        //take to an update editor page to allow editing. and delete old file.
+        //expects pass(thisWork100%) and update == yes.
+        if(req.query.pass == "thisWork100%"){
+            async.parallel({
+                record: function(callback){
+                    TechRecord.findById(req.params.id).exec(callback)
+                },},function(err, results){
+                    //find the old object, and render and pass it to updateEditor.
+                    if(err){return next(err);}
+                    if(results.record == null){
+                        var err = new Error('Record Not Found');
+                        err.status = 404;
+                        return next(err);
         
-    });
+                    }  
+                    res.render('technicalDetailEdit', {title: 'details', record: results.record});      
+            });
+        }
+        
+    }
 }
+exports.updateJSRecord = [
+
+    // Convert the phone to an array
+    (req, res, next) => {
+        
+        next();
+    },
+     // Process request after validation and sanitization.
+     (req, res, next) => {
+    var record = req.body;
+    for(let i = 0; i < record.blocks.length; i++){
+        if(record.blocks[i].type =='image'){
+            record.blocks[i].imageName = imageName;
+            console.log(record.blocks[i]);
+        }
+    }
+
+    let rec = new TechRecord({
+        Record: record,
+        _id:req.params.id
+    })
+     // Data from form is valid. Update the record.
+     console.log(rec);
+    TechRecord.findByIdAndUpdate(req.params.id, rec, {}, function (err,thebook) {
+        if (err) { return next(err); }
+            // Successful - redirect to book detail page.
+            res.send('good');
+        });
+  
+    
+    
+     }];
 exports.addEmailToSub = function(req, res, next){
     //save post
     let email = new Email({
