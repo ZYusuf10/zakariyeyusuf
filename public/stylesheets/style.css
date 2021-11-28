@@ -73,7 +73,7 @@ html, body {
     padding-top: 1%;
     padding: 2%;
     padding-bottom: 1%;
-    margin-bottom: 40%;
+    margin-bottom: 0px;
   }
   #banner{
     padding: 1%;
@@ -81,7 +81,7 @@ html, body {
     color:#333D51;
   }
   #banner > img{
-    
+    width: 40%;
     display: block;
   margin-left: auto;
   margin-right: auto;
@@ -106,7 +106,7 @@ html, body {
     background-color:#CBD0D8;
     color: #333D51;
     position: relative;
-    margin-top: 4%;
+    margin-top: 1%;
     padding-bottom: 3%;
     display: flex; 
     justify-content: center;
@@ -115,7 +115,7 @@ html, body {
   }
   #media> a{
     padding: 1%;
-    margin: 3%;
+    margin: 1%;
     border-radius: 5px;
     border-style: solid;
     border-color: rgb(44, 47, 54);
@@ -138,7 +138,7 @@ html, body {
     border-right-style: solid;
     border-right-color: #333D51;
     padding-bottom: 20px;
-    margin-top: 50px;
+    margin-top: 1%;
     display: flex; 
     justify-content: center;
     flex-wrap: wrap;
@@ -518,7 +518,7 @@ html, body {
   #mainContainer{
     display: flex; 
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     align-items: center;
   }
   .section{
@@ -561,15 +561,16 @@ html, body {
        
   }
   .front{
-    margin-top: 5%; 
+    margin-top: 2%; 
   }
   #banner{
     padding: 1%;
     background-color:#F4F3EA;;
     color:#333D51;
+    padding: 0px;
   }
   #banner > img{
-    
+    width: 30%;
     display: block;
   margin-left: auto;
   margin-right: auto;
@@ -594,7 +595,7 @@ html, body {
     background-color:#CBD0D8;
     color: #333D51;
     position: relative;
-    margin-top: 4%;
+    margin-top: 1%;
     padding-bottom: 3%;
     display: flex; 
     justify-content: center;
@@ -626,7 +627,7 @@ html, body {
     border-right-style: solid;
     border-right-color: #333D51;
     padding-bottom: 20px;
-    margin-top: 4%;
+    margin-top: 1%;
     display: flex; 
     justify-content: center;
     flex-wrap: wrap;

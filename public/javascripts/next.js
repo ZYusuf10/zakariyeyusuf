@@ -460,7 +460,7 @@ if(frontNum == 1){
     
 
     let navDown = document.createElement('div');
-    navDown.textContent = ">"
+    navDown.textContent = ">>"
     navDown.setAttribute('class', 'navigDown');
     navDown.addEventListener('click', down);
     gradientDiv.appendChild(navDown);
@@ -478,7 +478,7 @@ function down(){
     gradientDivUp.style.color = '#CBD0D8;'
 
     let navUp = document.createElement('div');
-    navUp.textContent = ">"
+    navUp.textContent = ">>"
     navUp.setAttribute('class', 'navigUp');
     navUp.addEventListener('click', up);
     gradientDivUp.appendChild(navUp);
@@ -608,7 +608,7 @@ function up(){
     banner.appendChild(nameH);
 
     let bannerImg = document.createElement('img');
-    bannerImg.setAttribute('src', '/images/sahara.jpg');
+    bannerImg.setAttribute('src', '/images/sahara.png');
     banner.appendChild(bannerImg);
 
     let info = document.createElement('p');
